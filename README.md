@@ -14,7 +14,8 @@
 
 ## Overview
 
-This repository contains all scripts and domain grid files associated with the MSc thesis *"Tracking and Interaction of Atmospheric Phenomena in Antarctic Extreme Precipitation"* (Muccioli, 2026).
+This repository contains all scripts and domain grid files associated with the MSc thesis *"Multi-Feature Interactions during Antarctic
+Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison"* (Muccioli, 2026).
 
 The project develops a **unified multi-feature tracking framework** for the Antarctic region, building on the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of Prein et al. (2023). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
 
