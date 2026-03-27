@@ -64,6 +64,16 @@ Contains all scripts related to the analysis of atmospheric feature occurrence a
 
 ---
 
+### Domain Grid Files
+
+| File | Description |
+|------|-------------|
+| `PolarRES_WP3_Antarctic_Domain.nc` | Standard Antarctic PolarCORDEX domain at 0.11° resolution, centred over Antarctica. |
+| `PolarRES_WP3_Antarctic_Domain_expanded.nc` | Expanded version of the PolarCORDEX domain, extended by ~50% in each horizontal direction into the southern mid-latitudes, to capture upstream synoptic features. |
+| `grid_expansion.py` | Script used to generate the expanded PolarCORDEX domain from the original grid file. |
+
+---
+
 ### `EPE_Objects/`
 Contains all scripts related to the detection of extreme precipitation objects and their association with atmospheric features.
 
@@ -165,15 +175,6 @@ Contains scripts related to computation of seasonal precipitation percentiles (9
 
 ---
 
-### Domain Grid Files
-
-| File | Description |
-|------|-------------|
-| `PolarRES_WP3_Antarctic_Domain.nc` | Standard Antarctic PolarCORDEX domain at 0.11° resolution, centred over Antarctica. |
-| `PolarRES_WP3_Antarctic_Domain_expanded.nc` | Expanded version of the PolarCORDEX domain, extended by ~50% in each horizontal direction into the southern mid-latitudes, to capture upstream synoptic features. |
-| `grid_expansion.py` | Script used to generate the expanded PolarCORDEX domain from the original grid file. |
-
----
 
 ## Data
 
