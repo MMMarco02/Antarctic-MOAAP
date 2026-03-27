@@ -64,7 +64,7 @@ Contains all scripts related to the analysis of atmospheric feature occurrence a
 
 ---
 
-### Domain Grid Files
+### `Domain Grid Files/`
 
 | File | Description |
 |------|-------------|
