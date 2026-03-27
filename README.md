@@ -159,7 +159,7 @@ Contains scripts for computing and comparing mean annual precipitation across da
 
 
 ### `PolarCORDEX_RCM_Embedding/`
-Contains all scripts related to ipeline for preprocessing and embedding RCM data within the ERA5 background on the expanded PolarCORDEX domain.
+Contains all scripts related to pipeline for preprocessing and embedding RCM data within the ERA5 background on the expanded PolarCORDEX domain.
 
 | Script | Description |
 |--------|-------------|
