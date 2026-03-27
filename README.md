@@ -5,7 +5,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 
-**Author:** Marco Muccioli, MSc student in "Environmental Sciences" at ETH Zürich  
+**Author:** Marco Muccioli, MSc student in "Environmental Sciences (Atmosphere & Climate)", ETH Zürich  
 
 ---
 
@@ -183,25 +183,16 @@ The analysis is based on the following datasets:
 ---
 
 ## Requirements
-
-The scripts require Python 3.9+ and the following main packages:
-
-```
-numpy
-xarray
-pandas
-matplotlib
-cartopy
-scipy
-netCDF4
-```
-
-A `requirements.txt` file is included for convenience. Install dependencies with:
-
+ 
+The scripts require Python 3.11 and the packages listed in `environment_core.yml`. Reproduce the environment with:
+ 
 ```bash
-pip install -r requirements.txt
+conda env create -f environment_core.yml
+conda activate ant_env
 ```
-
+ 
+Key dependencies include: `xarray`, `netcdf4`, `cartopy`, `geopandas`, `scipy`, `matplotlib`, `seaborn`, `dask`, `metpy`, `regionmask`, `numba`, and `pandas`.
+ 
 Bash scripts additionally require [CDO (Climate Data Operators)](https://code.mpimet.mpg.de/projects/cdo).
 
 ---
