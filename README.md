@@ -17,10 +17,10 @@
 This repository contains all scripts and domain grid files associated with the MSc thesis *"Multi-Feature Interactions during Antarctic
 Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison"* (Muccioli, 2026).
 
-The project develops a **unified multi-feature tracking framework** for the Antarctic region, building on the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of Prein et al. (2023). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
+The project develops a **unified multi-feature tracking framework** for the Antarctic region, building on the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of [Prein et al. (2023)](https://doi.org/10.1029/2023EF003534). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
 
-The calibrated framework is applied to:
-- **ERA5** reanalysis (2001–2020) as a reference climatology
+The calibrated algorithm is applied over the 2001-2020 period to:
+- **ERA5** reanalysis
 - Three **PolarCORDEX regional climate models**: HCLIM, MetUM, and RACMO
 
 The analysis quantifies both the individual and compound contributions of synoptic-scale features to Antarctic EPEs, and evaluates the added value of high-resolution RCMs in reproducing their atmospheric drivers.
