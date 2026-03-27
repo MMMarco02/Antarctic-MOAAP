@@ -16,7 +16,7 @@ This repository provides a **unified multi-feature tracking framework for the An
  
 The Antarctic adaptation, including revised detection thresholds, domain configuration, and calibration for high-latitude dynamical and thermodynamical conditions, is the **core contribution of this repository**. All other scripts support the analysis performed in:
  
-> Muccioli, M. (2026). *Tracking and Interaction of Atmospheric Phenomena in Antarctic Extreme Precipitation*. MSc Thesis, ETH Zürich. Supervised by Prof. Andreas Prein (IAC, ETH Zürich) and Research Prof. Priscilla Mooney (NORCE / Bjerknes Centre for Climate Research (BCCR), Bergen).
+> Muccioli, M. (2026). *Multi-Feature Interactions during Antarctic Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison*. MSc Thesis, ETH Zürich. Supervised by Prof. Andreas Prein (IAC, ETH Zürich) and Research Prof. Priscilla Mooney (NORCE / Bjerknes Centre for Climate Research (BCCR), Bergen).
  
 The calibrated framework was applied over the 2001–2020 period to **ERA5** reanalysis and three **PolarCORDEX high-resolution (0.11°) regional climate models**: HCLIM, MetUM and RACMO.
  
@@ -72,9 +72,6 @@ Contains the Antarctic adaptation of the MOAAP detection framework.
 | `Tracking_Functions_ANT.py` | **Primary output of this repository.** Contains all detection logics, methods, and thresholds for the features tracked by MOAAP (ARs, CYs, ACYs, FRs, JETs). Specifically tuned for Antarctic dynamical and thermodynamical conditions, while retaining the structure of the original global configuration [(Prein et al., 2023)](https://doi.org/10.1029/2023EF003534). Designed to be portable and reusable. |
 | `MOAAP_years_all.py` | Imports `Tracking_Functions_ANT` and runs feature detection for specified years and features. Fully configurable: can run all features together or individually. Applicable to all datasets (ERA5 and RCMs). |
  
----
- 
-The following sections describe the **supporting analysis scripts**, which process and visualise the outputs of the detection framework above.
  
 ---
 
@@ -220,9 +217,9 @@ Bash scripts additionally require [CDO (Climate Data Operators)](https://code.mp
 
 ## How to Cite
 
-If you use this code or data in your research, please cite:
+If you use this code in your research, please cite:
 
-> Muccioli, M. (2026). *Tracking and Interaction of Atmospheric Phenomena in Antarctic Extreme Precipitation*. MSc Thesis, ETH Zürich. DOI: [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)
+> Muccioli, M. (2026). *Multi-Feature Interactions during Antarctic Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison*. MSc Thesis, ETH Zürich. DOI: [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 This framework builds on:
 
