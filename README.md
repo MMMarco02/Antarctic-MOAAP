@@ -34,6 +34,7 @@ The analysis quantifies both the individual and compound contributions of synopt
 ```
 .
 ├── ANT_Regions_Analysis/
+├── Domain_Grid_Files/
 ├── EPE_Objects/
 ├── Feature_Climatologies/
 ├── Features_Visualization/
@@ -43,7 +44,6 @@ The analysis quantifies both the individual and compound contributions of synopt
 ├── PolarCORDEX_RCM_Embedding/
 ├── PR_Objects/
 ├── PR_Seasonal_Percentiles/
-├── Domain_Grid_Files/
 ├── README.md
 └── LICENSE
 ```
@@ -52,7 +52,7 @@ The analysis quantifies both the individual and compound contributions of synopt
 
 ## Scripts Description
 
-### 1. `ANT_Regions_Analysis/`
+### `ANT_Regions_Analysis/`
 Contains all scripts related to the analysis of atmospheric feature occurrence and co-occurrence in top-100 extreme precipitation events, within three IPCC AR6 regions.
 
 | Script | Description |
@@ -64,7 +64,7 @@ Contains all scripts related to the analysis of atmospheric feature occurrence a
 
 ---
 
-### 2. `EPE_Objects/`
+### `EPE_Objects/`
 Contains all scripts related to the detection of extreme precipitation objects and their association with atmospheric features.
 
 | Script | Description |
@@ -79,7 +79,7 @@ Contains all scripts related to the detection of extreme precipitation objects a
 
 ---
 
-### 3. `Feature_Climatologies/`
+### `Feature_Climatologies/`
 Contains scripts for computation and visualisation of multi-year MOAAP-detected feature climatologies.
 
 | Script | Description |
@@ -89,7 +89,7 @@ Contains scripts for computation and visualisation of multi-year MOAAP-detected 
 
 ---
 
-### 4. `Features_Visualization/`
+### `Features_Visualization/`
 Contains scripts for visualisation of case studies and animations.
 
 | Script | Description |
@@ -99,7 +99,7 @@ Contains scripts for visualisation of case studies and animations.
 
 ---
 
-### 5. `IVT_95th_Percentile/`
+### `IVT_95th_Percentile/`
 Contains scripts for computation of Integrated Vapour Transport (IVT) and its 95th percentile, used as threshold for AR detection.
 
 | Script | Description |
@@ -111,7 +111,7 @@ Contains scripts for computation of Integrated Vapour Transport (IVT) and its 95
 
 ---
 
-### 6. `Mean_Precipitation/`
+### `Mean_Precipitation/`
 Contains scripts for computing and comparing mean annual precipitation across datasets.
 
 | Script | Description |
@@ -121,7 +121,7 @@ Contains scripts for computing and comparing mean annual precipitation across da
 
 ---
 
-### 7. `MOAAP_code/`
+### `MOAAP_code/`
 Core feature detection framework, contains MOAAP adapted for Antarctica.
 
 | Script | Description |
@@ -131,7 +131,7 @@ Core feature detection framework, contains MOAAP adapted for Antarctica.
 
 ---
 
-### 8. `PolarCORDEX_RCM_Embedding/`
+### `PolarCORDEX_RCM_Embedding/`
 Contains all scripts related to ipeline for preprocessing and embedding RCM data within the ERA5 background on the expanded PolarCORDEX domain.
 
 | Script | Description |
@@ -144,7 +144,7 @@ Contains all scripts related to ipeline for preprocessing and embedding RCM data
 
 ---
 
-### 9. `PR_Objects/`
+### `PR_Objects/`
 Contains scripts for detection of 6-hourly precipitation objects and related computation of feature contributions to mean precipitation.
 
 | Script | Description |
@@ -155,7 +155,7 @@ Contains scripts for detection of 6-hourly precipitation objects and related com
 
 ---
 
-### 10. `PR_Seasonal_Percentiles/`
+### `PR_Seasonal_Percentiles/`
 Contains scripts related to computation of seasonal precipitation percentiles (99th and 99.9th) used for detection of EPE objects.
 
 | Script | Description |
