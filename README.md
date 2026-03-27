@@ -44,6 +44,7 @@ The analysis quantifies both the individual and compound contributions of synopt
 ├── PolarCORDEX_RCM_Embedding/
 ├── PR_Objects/
 ├── PR_Seasonal_Percentiles/
+├── environment_core.yml
 ├── README.md
 └── LICENSE
 ```
@@ -222,7 +223,7 @@ This framework builds on:
 
 ## Contact
 
-**Marco Muccioli** — mmuccioli@xxx.ethz.ch  
+**Marco Muccioli** — mmuccioli@student.ethz.ch  
 Institute for Atmospheric and Climate Science (IAC), ETH Zürich
 
 Feel free to reach out for questions, feedback, or potential collaborations.
