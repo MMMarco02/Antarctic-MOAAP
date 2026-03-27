@@ -18,11 +18,11 @@ The project develops a **unified multi-feature tracking framework** for the Anta
 
 The calibrated algorithm is applied over the 2001-2020 period to:
 - **ERA5** reanalysis
-- Three **PolarCORDEX regional climate models**: HCLIM, MetUM, and RACMO
+- Three **PolarCORDEX high-resolution (0.11°) regional climate models**: HCLIM, MetUM and RACMO
 
-The analysis quantifies both the individual and compound contributions of synoptic-scale features to Antarctic EPEs, and evaluates the added value of high-resolution RCMs in reproducing their atmospheric drivers.
+The analysis quantifies both the individual and compound contributions of synoptic-scale features to Antarctic EPEs, while evaluating the added value of high-resolution RCMs in reproducing their atmospheric drivers.
 
-> ⚠️ **Note on reproducibility:** All scripts were originally run on the **Betzy HPC cluster** (SIGMA2, Norwegian Research Infrastructure). File paths are cluster-specific and will need to be adapted to your own system and directory structure before running.
+> ⚠️ **Note on reproducibility:** All scripts were originally run on the **Betzy HPC cluster** (SIGMA2, Norwegian Research Infrastructure). Some file paths may still  be cluster-specific and will need to be adapted to your own system and directory structure before running.
 
 ---
 
