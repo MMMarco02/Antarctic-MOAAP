@@ -1,0 +1,21 @@
+name: ant_env
+channels:
+  - conda-forge
+dependencies:
+  - dask
+  - dask-expr
+  - xarray
+  - bottleneck
+  - python=3.11
+  - geopandas
+  - netcdf4
+  - pandas
+  - dask-core
+  - regionmask
+  - cartopy
+  - scipy
+  - matplotlib
+  - seaborn
+  - h5netcdf
+  - numba
+  - metpy
