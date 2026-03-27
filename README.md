@@ -8,7 +8,7 @@
 **Master's Thesis** | MSc Environmental Sciences | ETH Zürich | March 2026
 
 **Author:** Marco Muccioli  
-**Supervisors:** Prof. Andreas Prein (ETH Zürich, IAC) · Research Prof. Priscilla Mooney (NORCE / Bjerknes Centre, Bergen)
+**Supervisors:** Prof. Andreas Prein (ETH Zürich, Institute for Atmosphere & Climate, ETH Zürich, Zürich) and Research Prof. Priscilla Mooney (NORCE Climate & Environment, Bjerknes Centre for Climate Research, Bergen)
 
 ---
 
