@@ -1,32 +1,43 @@
-# Antarctic-MOAAP version
-
+# Antarctic-MOAAP
+ 
 [![License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-
-
-**Author:** Marco Muccioli 
-
-**Affiliation**: Institute for Atmosphere & Climate (IAC), ETH Zürich, Zürich
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-green.svg)](https://www.python.org/)
+ 
+**Author:** Marco Muccioli  
+**Affiliation:** Institute for Atmospheric and Climate Science (IAC), ETH Zürich
+ 
+---
+ 
+## Overview
+ 
+This repository provides a **unified multi-feature tracking framework for the Antarctic region**, adapted from the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of [Prein et al. (2023)](https://doi.org/10.1029/2023EF003534). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
+ 
+The Antarctic adaptation, including revised detection thresholds, domain configuration, and calibration for high-latitude dynamical and thermodynamical conditions, is the **core contribution of this repository**. All other scripts support the analysis performed in:
+ 
+> Muccioli, M. (2026). *Tracking and Interaction of Atmospheric Phenomena in Antarctic Extreme Precipitation*. MSc Thesis, ETH Zürich. Supervised by Prof. Andreas Prein (IAC, ETH Zürich) and Research Prof. Priscilla Mooney (NORCE / Bjerknes Centre for Climate Research (BCCR), Bergen).
+ 
+The calibrated framework was applied over the 2001–2020 period to **ERA5** reanalysis and three **PolarCORDEX high-resolution (0.11°) regional climate models**: HCLIM, MetUM and RACMO.
+ 
+> ⚠️ **Note on reproducibility:** All scripts were originally run on the **Betzy HPC cluster** (SIGMA2, Norwegian Research Infrastructure). Some file paths may still be cluster-specific and will need to be adapted to your own system and directory structure before running.
 
 
 ---
-
-## Overview
-
-This repository contains all scripts and domain grid files associated with the MSc thesis *"Multi-Feature Interactions during Antarctic
-Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison"* (Muccioli, 2026). The MSc thesis was supervised by: Prof. Andreas Prein (Institute for Atmosphere & Climate, ETH Zürich, Zürich) and Research Prof. Priscilla Mooney (NORCE Climate & Environment, Bjerknes Centre for Climate Research, Bergen).
-
-The project develops a **unified multi-feature tracking framework** for the Antarctic region, building on the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of [Prein et al. (2023)](https://doi.org/10.1029/2023EF003534). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
-
-The calibrated algorithm is applied over the 2001-2020 period to:
-- **ERA5** reanalysis
-- Three **PolarCORDEX high-resolution (0.11°) regional climate models**: HCLIM, MetUM and RACMO
-
-The analysis quantifies both the individual and compound contributions of synoptic-scale features to Antarctic EPEs, while evaluating the added value of high-resolution RCMs in reproducing their atmospheric drivers.
-
-> ⚠️ **Note on reproducibility:** All scripts were originally run on the **Betzy HPC cluster** (SIGMA2, Norwegian Research Infrastructure). Some file paths may still  be cluster-specific and will need to be adapted to your own system and directory structure before running.
-
+ 
+## Key Contribution
+ 
+The Antarctic adaptation of MOAAP is contained in:
+ 
+```
+MOAAP_Code/
+├── Tracking_Functions_ANT.py   ← core features-detection logic, adapted for Antarctica
+└── MOAAP_years_all.py          ← runs the detection for specified datasets/years
+```
+ 
+**`Tracking_Functions_ANT.py`** is the primary scientific output of this repository. It contains all feature detection logics, thresholds, and methods specifically tuned for Antarctic atmospheric conditions, and is designed to be portable and reusable for future studies. All other scripts in the repository use the outputs of this detection framework for analysis and visualisation.
+ 
+ 
 ---
 
 ## Repository Structure
@@ -52,6 +63,20 @@ The analysis quantifies both the individual and compound contributions of synopt
 ---
 
 ## Scripts Description
+ 
+### `MOAAP_Code/` ⭐ *core contribution*
+Contains the Antarctic adaptation of the MOAAP detection framework.
+ 
+| Script | Description |
+|--------|-------------|
+| `Tracking_Functions_ANT.py` | **Primary output of this repository.** Contains all detection logics, methods, and thresholds for the features tracked by MOAAP (ARs, CYs, ACYs, FRs, JETs). Specifically tuned for Antarctic dynamical and thermodynamical conditions, while retaining the structure of the original global configuration [(Prein et al., 2023)](https://doi.org/10.1029/2023EF003534). Designed to be portable and reusable. |
+| `MOAAP_years_all.py` | Imports `Tracking_Functions_ANT` and runs feature detection for specified years and features. Fully configurable: can run all features together or individually. Applicable to all datasets (ERA5 and RCMs). |
+ 
+---
+ 
+The following sections describe the **supporting analysis scripts**, which process and visualise the outputs of the detection framework above.
+ 
+---
 
 ### `ANT_Regions_Analysis/`
 Contains all scripts related to the analysis of atmospheric feature occurrence and co-occurrence in top-100 extreme precipitation events, within three IPCC AR6 regions.
@@ -132,15 +157,6 @@ Contains scripts for computing and comparing mean annual precipitation across da
 
 ---
 
-### `MOAAP_code/`
-Core feature detection framework, contains MOAAP adapted for Antarctica.
-
-| Script | Description |
-|--------|-------------|
-| `Tracking_Functions_ANT.py` | Contains all detection logics, methods, and thresholds for the features tracked by MOAAP (ARs, CYs, ACYs, FRs, JETs). This is the version specifically tuned for Antarctic dynamical and thermodynamical conditions, while retaining the structure of the original global configuration [(Prein et al., 2023)](https://doi.org/10.1029/2023EF003534). |
-| `MOAAP_years_all.py` | Imports `Tracking_Functions_ANT` and runs feature detection for specified years and features. Fully configurable: can run all features together or individually. Applicable to all datasets (ERA5 and RCMs). |
-
----
 
 ### `PolarCORDEX_RCM_Embedding/`
 Contains all scripts related to ipeline for preprocessing and embedding RCM data within the ERA5 background on the expanded PolarCORDEX domain.
