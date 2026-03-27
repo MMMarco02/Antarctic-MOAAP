@@ -1,21 +1,18 @@
-# Antarctic-adapted MOAAP version
+# Antarctic-MOAAP version
 
 [![License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
 
-**Master's Thesis** | MSc Environmental Sciences | ETH Zürich | March 2026
 
-**Author:** Marco Muccioli  
-**Supervisors:** Prof. Andreas Prein (ETH Zürich, Institute for Atmosphere & Climate, ETH Zürich, Zürich) and Research Prof. Priscilla Mooney (NORCE Climate & Environment, Bjerknes Centre for Climate Research, Bergen)
+**Author:** Marco Muccioli, MSc student in "Environmental Sciences" at ETH Zürich  
 
 ---
 
 ## Overview
 
 This repository contains all scripts and domain grid files associated with the MSc thesis *"Multi-Feature Interactions during Antarctic
-Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison"* (Muccioli, 2026).
+Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison"* (Muccioli, 2026). The MSc thesis was supervised by: Prof. Andreas Prein (ETH Zürich, Institute for Atmosphere & Climate, ETH Zürich, Zürich) and Research Prof. Priscilla Mooney (NORCE Climate & Environment, Bjerknes Centre for Climate Research, Bergen).
 
 The project develops a **unified multi-feature tracking framework** for the Antarctic region, building on the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of [Prein et al. (2023)](https://doi.org/10.1029/2023EF003534). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
 
