@@ -12,13 +12,9 @@
  
 ## Overview
  
-This repository provides a **unified multi-feature tracking framework for the Antarctic region**, adapted from the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of [Prein et al. (2023)](https://doi.org/10.1029/2023EF003534). The framework simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs), and links them to extreme precipitation events (EPEs) over Antarctica.
+This repository contains a **unified multi-feature tracking framework for the Antarctic region**, adapted from the [MOAAP algorithm](https://github.com/AndreasPrein/MOAAP) of [Prein et al. (2023)](https://doi.org/10.1029/2023EF003534). The tuned algorithm simultaneously detects and tracks atmospheric rivers (ARs), cyclones (CYs), anticyclones (ACYs), atmospheric fronts (FRs) and upper-level jets (JETs). These features are then linked to extreme precipitation events (EPEs) over Antarctica.
  
-The Antarctic adaptation, including revised detection thresholds, domain configuration, and calibration for high-latitude dynamical and thermodynamical conditions, is the **core contribution of this repository**. All other scripts support the analysis performed in:
- 
-> Muccioli, M. (2026). *Multi-Feature Interactions during Antarctic Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison*. MSc Thesis, ETH Zürich. Supervised by Prof. Andreas Prein (IAC, ETH Zürich) and Research Prof. Priscilla Mooney (NORCE / Bjerknes Centre for Climate Research (BCCR), Bergen).
- 
-The calibrated framework was applied over the 2001–2020 period to **ERA5** reanalysis and three **PolarCORDEX high-resolution (0.11°) regional climate models**: HCLIM, MetUM and RACMO.
+The calibrated framework is applied over the 2001–2020 period to **ERA5** reanalysis and three **Polar-CORDEX high-resolution (0.11° grid spacing) regional climate models**: HCLIM, MetUM and RACMO.
  
 > ⚠️ **Note on reproducibility:** All scripts were originally run on the **Betzy HPC cluster** (SIGMA2, Norwegian Research Infrastructure). Some file paths may still be cluster-specific and will need to be adapted to your own system and directory structure before running.
 
@@ -64,16 +60,7 @@ MOAAP_Code/
 
 ## Scripts Description
  
-### `MOAAP_Code/` ⭐ *core contribution*
-Contains the Antarctic adaptation of the MOAAP detection framework.
  
-| Script | Description |
-|--------|-------------|
-| `Tracking_Functions_ANT.py` | **Primary output of this repository.** Contains all detection logics, methods, and thresholds for the features tracked by MOAAP (ARs, CYs, ACYs, FRs, JETs). Specifically tuned for Antarctic dynamical and thermodynamical conditions, while retaining the structure of the original global configuration [(Prein et al., 2023)](https://doi.org/10.1029/2023EF003534). Designed to be portable and reusable. |
-| `MOAAP_years_all.py` | Imports `Tracking_Functions_ANT` and runs feature detection for specified years and features. Fully configurable: can run all features together or individually. Applicable to all datasets (ERA5 and RCMs). |
- 
- 
----
 
 ### `ANT_Regions_Analysis/`
 Contains all scripts related to the analysis of atmospheric feature occurrence and co-occurrence in top-100 extreme precipitation events, within three IPCC AR6 regions.
@@ -91,9 +78,9 @@ Contains all scripts related to the analysis of atmospheric feature occurrence a
 
 | File | Description |
 |------|-------------|
-| `PolarRES_WP3_Antarctic_Domain.nc` | Standard Antarctic PolarCORDEX domain at 0.11° resolution, centred over Antarctica. |
-| `PolarRES_WP3_Antarctic_Domain_expanded.nc` | Expanded version of the PolarCORDEX domain, extended by ~50% in each horizontal direction into the southern mid-latitudes, to capture upstream synoptic features. |
-| `grid_expansion.py` | Script used to generate the expanded PolarCORDEX domain from the original grid file. |
+| `PolarRES_WP3_Antarctic_Domain.nc` | Standard Antarctic Polar-CORDEX domain at 0.11° resolution, centred over Antarctica. |
+| `PolarRES_WP3_Antarctic_Domain_expanded.nc` | Expanded version of the Polar-CORDEX domain, extended by 50% in each horizontal direction into the southern mid-latitudes, to capture upstream synoptic features. |
+| `grid_expansion.py` | Script used to generate the expanded Polar-CORDEX domain from the original grid file. |
 
 ---
 
@@ -102,9 +89,9 @@ Contains all scripts related to the detection of extreme precipitation objects a
 
 | Script | Description |
 |--------|-------------|
-| `EPE_Object_detection_all.py` | Core EPE object detection function. Identifies extreme precipitation objects using seasonal thresholds (99th and 99.9th percentile) of hourly precipitation. Includes a plotting helper for visualisation. Works with ERA5 and PolarCORDEX datasets. |
+| `EPE_Object_detection_all.py` | Core EPE object detection function. Identifies extreme precipitation objects using seasonal thresholds (99th and 99.9th percentile) of hourly precipitation. Includes a plotting helper for visualisation. Works with ERA5 and RCMs. |
 | `EPE_feature_association_buffer.py` | Implements the buffer-based, non-exclusive association between EPE objects and MOAAP-detected features. Applicable to any dataset. Outputs NPZ files and 6-panel association maps. |
-| `EPE_feature_association_buffer_difference_part1.py` | Computes percentage-point differences between a specified RCM and ERA5 in EPE–feature fractional associations. Saves results as NPZ files. |
+| `EPE_feature_association_buffer_difference_part1.py` | Computes percentage point differences between a specified RCM and ERA5 in EPE–feature fractional associations. Saves results as NPZ files. |
 | `EPE_feature_association_buffer_difference_part2.py` | Follows Part 1. Applies pixel-wise Wilcoxon signed-rank test to the computed differences to produce 6-panel plots. |
 | `EPE_feature_association_buffer_composite.py` | Same as 'EPE_feature_association_buffer_difference_part2.py', but for all RCMs simultaneously, producing a single 6×3 composite figure (features × RCMs). Requires Part 1 to have been run for all target RCMs. |
 | `EPE_frequency.py` | Computes multi-year frequency of EPE objects (both 99th and 99.9th percentiles) and plots them. Applicable to all datasets individually. |
@@ -127,20 +114,30 @@ Contains scripts for visualisation of case studies and animations.
 
 | Script | Description |
 |--------|-------------|
-| `plot_case_studies.py` | Generates the case study plots used in the thesis, showing precipitation and feature overlays for selected Antarctic EPEs. Modular and adaptable to additional cases or features. |
+| `plot_case_studies.py` | Generates the case study plots used in the thesis, showing precipitation and feature overlays for selected Antarctic EPEs. Modular and adaptable to additional or different cases. |
 | `plot_features_with_1hr_epe_obj.py` | Plots frames or animations of hourly EPE objects and 6-hourly detected features, with the hourly precipitation field as background. Configurable by dataset, percentile, year and timestep range. |
 
 ---
 
 ### `IVT_95th_Percentile/`
-Contains scripts for computation of Integrated Vapour Transport (IVT) and its 95th percentile, used as threshold for AR detection.
+Contains scripts for computation of Integrated Vapour Transport (IVT) and its 95th monthly percentile, used as threshold for AR detection.
 
 | Script | Description |
 |--------|-------------|
 | `compute_ivte_ivtn.py` | Computes IVT east and north components from wind (ua, va) and specific humidity (hus) using the trapezoidal rule for vertical integration. Memory-efficient: loads one pressure level at a time. Applies a surface mask based on geopotential height. Here written for RACMO2, but logic is transferable to ERA5, HCLIM, and MetUM. Designed to run after `prep_model_data.py`. |
 | `ivt_computation.sh` | Computes IVT magnitude from the east/north components for each year using CDO. Represents the first step of the IVT percentile pipeline. |
-| `ivt_merge.sh` | Merges annual IVT magnitude files (2001–2020) into a single combined file per dataset, and sets the variable name to `ivt`.Represents the second step of the IVT percentile pipeline. |
+| `ivt_merge.sh` | Merges annual IVT magnitude files (2001–2020) into a single combined file per dataset, and sets the variable name to `ivt`. Represents the second step of the IVT percentile pipeline. |
 | `ivt_percentile.sh` | Computes the 95th percentile of IVT over 2001–2020, using monthly min/max bounds. Final step of the IVT percentile pipeline. |
+
+---
+
+### `MOAAP_Code/`
+Contains the Antarctic adaptation of the MOAAP detection framework.
+ 
+| Script | Description |
+|--------|-------------|
+| `Tracking_Functions_ANT.py` | **Primary output of this repository.** Contains all detection logics, methods, and thresholds for the features tracked by MOAAP (ARs, CYs, ACYs, FRs, JETs). Specifically tuned for Antarctic dynamical and thermodynamical conditions, while retaining the structure of the original global configuration [(Prein et al., 2023)](https://doi.org/10.1029/2023EF003534). Designed to be portable and reusable. |
+| `MOAAP_years_all.py` | Imports `Tracking_Functions_ANT` and runs feature detection for specified years, dataset and features. Fully configurable: can run all features together or individually. Applicable to all datasets (ERA5 and RCMs). |
 
 ---
 
@@ -151,20 +148,6 @@ Contains scripts for computing and comparing mean annual precipitation across da
 |--------|-------------|
 | `ERA5_mean_annual_pr.py` | Computes mean total annual precipitation for ERA5 on a grid-by-grid basis over the analysis period and generates a geographical plot. |
 | `RCM_mean_annual_pr_difference.py` | Computes absolute and relative mean annual precipitation differences between RCMs and ERA5, producing a 6-panel comparison figure. |
-
----
-
-
-### `PolarCORDEX_RCM_Embedding/`
-Contains all scripts related to pipeline for preprocessing and embedding RCM data within the ERA5 background on the expanded PolarCORDEX domain.
-
-| Script | Description |
-|--------|-------------|
-| `prep_model_data.py` | Processes geopotential height (zg) files from the specified RCM and years. Converts from metres to geopotential (m² s⁻²) if needed, to align with ERA5 convention. Backs up original files with a `.raw.nc` extension. It is the first step of the embedding pipeline. |
-| `prep_model_pr.py` | Processes RCM precipitation (pr) files. Converts units from kg m⁻² s⁻¹ to m (total hourly accumulation) and shifts time labels by +30 min to align with ERA5 convention. Backs up originals. First step of the precipitation embedding pipeline. |
-| `remap_model_data.sh` | Remaps RCM output to the common PolarCORDEX grid (`PolarRES_WP3_Antarctic_domain.nc`) using CDO. Iterates over years and variables (including precipitation), applies the chosen remapping method and saves results in a structured directory. It is the second step of the embedding pipeline. |
-| `embed_model_data.py` | Embeds RCM data into the ERA5 background for the specified variables and years. Includes a blending mechanism (currently set to 0 points, i.e., no blending) and generates diagnostic plots to check for boundary discontinuities. Represents the final step of the embedding pipeline. |
-| `embed_model_pr.py` | Same as `embed_model_data.py`, but optimised for the `pr` variable (1-hourly). Includes a 1-hour temporal trimming step for proper alignment. Generates diagnostic plots for boundary checks. Final step of the precipitation embedding pipeline. |
 
 ---
 
@@ -179,8 +162,22 @@ Contains scripts for detection of 6-hourly precipitation objects and related com
 
 ---
 
+### `PolarCORDEX_RCM_Embedding/`
+Contains all scripts related to pipeline for preprocessing and embedding RCM data within the ERA5 background on the expanded PolarCORDEX domain.
+
+| Script | Description |
+|--------|-------------|
+| `prep_model_data.py` | Processes geopotential height (zg) files from the specified RCM and years. Converts from metres to m² s⁻² if needed, to align with ERA5 convention. Backs up original files with a `.raw.nc` extension. It is the first step of the embedding pipeline. |
+| `prep_model_pr.py` | Processes RCM precipitation (pr) files. Converts units from kg m⁻² s⁻¹ to m and shifts time labels by +30 min to align with ERA5 convention. Backs up originals. First step of the precipitation embedding pipeline. |
+| `remap_model_data.sh` | Remaps RCM output to the common Polar-CORDEX grid (`PolarRES_WP3_Antarctic_domain.nc`) using CDO. Iterates over years and variables (including precipitation), applies the chosen remapping method and saves results in a structured directory. It is the second step of the embedding pipeline. |
+| `embed_model_data.py` | Embeds RCM data into the ERA5 background for the specified variables and years. Includes a blending mechanism (currently set to 0 points --> no blending) and generates diagnostic plots to check for boundary discontinuities. Represents the final step of the embedding pipeline. |
+| `embed_model_pr.py` | Same as `embed_model_data.py`, but optimised for the `pr` variable (1-hourly). Includes a 1-hour temporal trimming step for proper alignment. Generates diagnostic plots for boundary checks. Final step of the precipitation embedding pipeline. |
+
+---
+
+
 ### `PR_Seasonal_Percentiles/`
-Contains scripts related to computation of seasonal precipitation percentiles (99th and 99.9th) used for detection of EPE objects.
+Contains scripts related to computation of seasonal hourly precipitation percentiles (99th and 99.9th) used for detection of EPE objects.
 
 | Script | Description |
 |--------|-------------|
@@ -221,7 +218,7 @@ If you use this code in your research, please cite:
 
 > Muccioli, M. (2026). *Multi-Feature Interactions during Antarctic Extreme Precipitation Events: A Reanalysis and Polar-CORDEX Intercomparison*. MSc Thesis, ETH Zürich. DOI: [10.5281/zenodo.19250141](https://doi.org/10.5281/zenodo.19250141)
 
-This framework builds on:
+This study builds on:
 
 > Prein, A. F., et al. (2023). The Multi-Scale Interactions of Atmospheric Phenomenon in Mean and Extreme Precipitation. *[Earth's Future]*, [11], [e2023EF003534]. DOI: [10.1029/2023EF003534](https://doi.org/10.1029/2023EF003534).
 
@@ -239,4 +236,4 @@ This framework builds on:
 **Marco Muccioli** — mmuccioli@student.ethz.ch  
 Institute for Atmospheric and Climate Science (IAC), ETH Zürich
 
-Feel free to reach out for questions, feedback, or potential collaborations.
+Feel free to reach out for questions, feedback or potential collaborations.
