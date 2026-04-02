@@ -220,7 +220,7 @@ If you use this code in your research, please cite:
 
 This study builds on:
 
-> Prein, A. F., et al. (2023). The Multi-Scale Interactions of Atmospheric Phenomenon in Mean and Extreme Precipitation. *[Earth's Future]*, [11], [e2023EF003534]. DOI: [10.1029/2023EF003534](https://doi.org/10.1029/2023EF003534).
+> Prein, A. F., et al. (2023). The Multi-Scale Interactions of Atmospheric Phenomenon in Mean and Extreme Precipitation. *Earth's Future*, 11, e2023EF003534. DOI: [10.1029/2023EF003534](https://doi.org/10.1029/2023EF003534).
 
 ---
 
